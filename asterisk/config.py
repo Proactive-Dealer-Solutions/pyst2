@@ -149,7 +149,9 @@ class Config(object):
         self.parse()
 
     def load(self):
-        self.raw_lines = open(self.filename).readlines()
+        fp = open(self.filename)
+        self.raw_lines = fp.readlines()
+        fp.close()
         #try:
             #self.raw_lines = open(self.filename).readlines()
         #except IOError:
